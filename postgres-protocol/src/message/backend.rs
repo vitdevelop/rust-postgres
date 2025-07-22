@@ -549,6 +549,12 @@ impl DataRowBody {
     pub fn buffer_bytes(&self) -> &Bytes {
         &self.storage
     }
+
+    #[inline]
+    pub unsafe fn clean(&mut self) {
+        self.storage.clear();
+        self.len = 0;
+    }
 }
 
 pub struct DataRowRanges<'a> {

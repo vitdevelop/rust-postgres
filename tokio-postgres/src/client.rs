@@ -176,7 +176,7 @@ pub(crate) enum Addr {
 /// The client is one half of what is returned when a connection is established. Users interact with the database
 /// through this client object.
 pub struct Client {
-    inner: Arc<InnerClient>,
+    pub(crate) inner: Arc<InnerClient>,
     #[cfg(feature = "runtime")]
     socket_config: Option<SocketConfig>,
     ssl_mode: SslMode,

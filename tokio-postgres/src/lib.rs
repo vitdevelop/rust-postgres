@@ -180,6 +180,8 @@ mod to_statement;
 mod transaction;
 mod transaction_builder;
 pub mod types;
+#[cfg(feature = "bumpalo")]
+pub mod arena;
 
 /// A convenience function which parses a connection string and connects to the database.
 ///

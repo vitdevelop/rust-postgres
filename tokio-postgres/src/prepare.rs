@@ -56,7 +56,7 @@ AND attnum > 0
 ORDER BY attnum
 ";
 
-static NEXT_ID: AtomicUsize = AtomicUsize::new(0);
+pub(crate) static NEXT_ID: AtomicUsize = AtomicUsize::new(0);
 
 pub async fn prepare(
     client: &Arc<InnerClient>,
